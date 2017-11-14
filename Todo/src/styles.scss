@@ -1,1 +1,33 @@
 /* You can add global styles to this file, and also import other style files */
+@font-face {
+	font-family: 'Raleway_light';
+	src: url(../src/assets/Raleway-Light.ttf);
+}
+@font-face {
+	font-family: 'Raleway_semibold';
+	src: url(../src/assets/Raleway-SemiBold.ttf);
+}
+
+body{
+	background: #66a8ff;
+	padding:3em;
+	font-family:'Raleway_light', 'Arial';
+	color: #fff;
+}
+
+ul{
+	list-style-type:none;
+	margin: 0 0 2em 0;
+	padding:0;
+	& li{
+		display: inline;
+		margin-right: 30px;
+		& a{
+			font-size:1.5em;
+		}
+	}
+}
+a{
+	color: #fff;
+	text-decoration: none;
+}

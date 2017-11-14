@@ -1,0 +1,40 @@
+
+.container {
+	display: grid;
+	grid-template-columns: 50% auto;
+}
+.col {
+	padding: .4em 1.3em;
+	font-size:18px;
+}
+.color-dark {
+	background: #7a5bff;
+}
+.color-light {
+	background: #9fafff;
+}
+
+input.txt {
+	border: 0;
+	padding: 0.8em;
+	width: 80%;
+	margin-bottom: 2em;
+	font-size:16px;
+}
+input.btn {
+	border: 0;
+	display:block;
+	padding:0.9em 2.6em;
+	background: #f8f6aa;
+	color:#333;
+	margin-bottom:1em;
+	cursor:pointer;
+	font-size:16px;
+}
+.goal-container {
+	background: #6b79c9;
+	padding:.5em;
+	font-weight:bold;
+	cursor:pointer;
+	font-size:16px;
+}
