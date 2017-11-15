@@ -3,7 +3,7 @@
 		<p>Добавить новую цель</p>
 	</div>
 	<div class="col">
-		<p>Список целей</p>
+		<p>Список целей ({{ itemCount }})</p>
 	</div>
 </div>
 <div class="container color-light">
@@ -11,13 +11,15 @@
 		<p class="sm">Используйте форму ниже что бы добавить что нужно сделать</p>
 
 		<form>
-			<input type="text" class="txt" name="item" placeholder="Новая цель">
-			<input type="submit" class="btn" value="Добавить">
+			<input type="text" class="txt" name="item" placeholder="Новая цель" [(ngModel)]="goalText">
+			<p class="current-goal">{{ goalText }}</p>
+			<input type="submit" class="btn" value="Добавить" (click)="addItem()">
 		</form>
 	</div>
 	<div class="col">
-		<p class="goal-container">
-			Изучить Angular
+		<p class="goal-container" *ngFor="let goal of goals">
+			{{ goal }}
+			<span class="delete">&times;</span>
 		</p>
 	</div>
 </div>
