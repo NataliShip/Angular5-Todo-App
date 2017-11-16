@@ -1,12 +1,12 @@
 <div class="container color-dark">
-	<div class="col">
+	<div class="col hide">
 		<p>Добавить новую цель</p>
 	</div>
 	<div class="col">
 		<p>Список целей ({{ itemCount }})</p>
 	</div>
 </div>
-<div class="container color-light">
+<div class="container color-light" [@goals]="goals.length">
 	<div class="col">
 		<p class="sm">Используйте форму ниже что бы добавить что нужно сделать</p>
 
@@ -17,9 +17,9 @@
 		</form>
 	</div>
 	<div class="col">
-		<p class="goal-container" *ngFor="let goal of goals">
+		<p class="goal-container" *ngFor="let goal of goals; let i = index" >
 			{{ goal }}
-			<span class="delete">&times;</span>
+			<span class="delete" (click)="removeItem(i)">&times;</span>
 		</p>
 	</div>
 </div>
