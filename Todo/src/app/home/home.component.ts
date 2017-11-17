@@ -30,7 +30,7 @@ import {trigger, style, transition, animate, keyframes, query, stagger} from '@a
 })
 export class HomeComponent implements OnInit {
 
-    itemCount: number = 4;
+    itemCount: number;
     goalText: string = '';
     goals =['Изучить Angular'];
 
@@ -51,6 +51,7 @@ export class HomeComponent implements OnInit {
 
     removeItem(i){
         this.goals.splice(i, 1);
+        this.itemCount = this.goals.length;
     }
 
 }
