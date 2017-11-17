@@ -1,5 +1,6 @@
 import {Component, OnInit, ViewEncapsulation} from '@angular/core';
 import {trigger, style, transition, animate, keyframes, query, stagger} from '@angular/animations'
+import {DataService} from '../data.service';
 
 @Component({
     selector: 'app-home',
@@ -32,12 +33,13 @@ export class HomeComponent implements OnInit {
 
     itemCount: number;
     goalText: string = '';
-    goals =['Изучить Angular'];
+    goals =[];
 
-    constructor() {
-    }
+    constructor(private _data: DataService) { }
 
     ngOnInit() {
+        this._data.goal.subscribe(res => this.goals = res);
+        this._data.changeGoal(this.goals);
         this.itemCount = this.goals.length;
     }
 
@@ -47,11 +49,13 @@ export class HomeComponent implements OnInit {
             this.goalText = '';
             this.itemCount = this.goals.length;
         }
+        this._data.changeGoal(this.goals);
     }
 
     removeItem(i){
         this.goals.splice(i, 1);
         this.itemCount = this.goals.length;
+        this._data.changeGoal(this.goals);
     }
 
 }
